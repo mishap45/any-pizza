@@ -10,7 +10,7 @@ const CartButton = () => {
         <div>
             <Button className={style.btnC} type="ghost" shape="round" icon={<ShoppingCartOutlined />} size={'large'} danger ghost>
                 <NavLink className={style.btn} to={'cart'}>
-                    Корзина | 0 грн | 0
+                    Корзина • 0 грн • 0
                 </NavLink>
             </Button>
         </div>
