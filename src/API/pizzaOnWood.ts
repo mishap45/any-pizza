@@ -59,6 +59,17 @@ const pizzaOnWood: pizzaOnWoodTypes = {
             mediumSize: true,
             bigSize: false,
             price: 91
+        },
+
+        {
+            id: 555,
+            imgPizza: 'https://tiptop-pizza.com.ua/image/catalog/pizza/9447.jpg',
+            namePizza: 'Фелічіта',
+            descPizza: 'томатна основа, шинка, кукурудза, цибуля, орегано, зелень',
+            smallSize: false,
+            mediumSize: true,
+            bigSize: true,
+            price: 76
         }
     ]
 };

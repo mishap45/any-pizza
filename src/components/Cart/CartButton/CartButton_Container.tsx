@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { orderPizza } from '../../../store/reducers/CartReducer'
+import { actionsCart, orderPizza } from '../../../store/reducers/CartReducer'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { AppStateType } from '../../../store/Redux'
@@ -10,13 +10,17 @@ type statePropsType = {
     Pizza: Array<orderPizza>
 }
 
-type dispatchPropsType = {}
+const setTotal = actionsCart.setTotal;
+
+type dispatchPropsType = {
+    setTotal: (total: number) => void
+}
 
 type ownPropsType = {}
 
 type CartButton_ContainerTypes = statePropsType & dispatchPropsType & ownPropsType
 
-const CartButton_Container:React.FC<CartButton_ContainerTypes> = ({ Pizza }) => {
+const CartButton_Container:React.FC<CartButton_ContainerTypes> = ({ Pizza, setTotal }) => {
 
     const [pizzaCartLength, setPizzaCartLength] = useState<number>(0);
     const [pizzaCartPrice, setPizzaCartPrice] = useState<number>(0);
@@ -33,7 +37,7 @@ const CartButton_Container:React.FC<CartButton_ContainerTypes> = ({ Pizza }) => 
         }
     }, [pizzaCartPrice, Pizza]);
 
-    return <CartButton pizzaCartLength={pizzaCartLength} pizzaCartPrice={pizzaCartPrice} />
+    return <CartButton setTotal={setTotal} pizzaCartLength={pizzaCartLength} pizzaCartPrice={pizzaCartPrice} />
 };
 
 const mapStateToProps = (state: AppStateType) => ({
@@ -41,5 +45,5 @@ const mapStateToProps = (state: AppStateType) => ({
 });
 
 export default compose(
-    connect<statePropsType, dispatchPropsType, ownPropsType, AppStateType>(mapStateToProps, {})
+    connect<statePropsType, dispatchPropsType, ownPropsType, AppStateType>(mapStateToProps, {setTotal})
 )(CartButton_Container)

@@ -20,8 +20,10 @@ type ownPropsType = {}
 
 type CartTable_ContainerTypes = statePropsType & dispatchPropsType & ownPropsType
 
-const CartTable_Container:React.FC<CartTable_ContainerTypes> = ({ Pizza, deleteOne }) =>
-    <CartTable Pizza={Pizza} deleteOne={deleteOne} />;
+const CartTable_Container:React.FC<CartTable_ContainerTypes> = ({ Pizza, deleteOne }) => {
+
+    return <CartTable Pizza={Pizza} deleteOne={deleteOne} />
+};
 
 const mapStateToProps = (state: AppStateType) => ({
     Pizza: getCart(state)

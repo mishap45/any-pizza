@@ -1,7 +1,6 @@
 import React from 'react'
 import { MinusOutlined, PlusOutlined, CloseOutlined } from '@ant-design/icons'
 import style from '../cartTable.module.css'
-import { Button } from 'antd'
 
 type CartTableElementTypes = {
     count: number
@@ -11,12 +10,14 @@ type CartTableElementTypes = {
     size: string
     price: number
 
-    setCount: (cont: number) => void
-    deleteOne: (idDelete: number) => void
+    deleteOneRow: (totalBooster: number, idDelete: number) => void
+    addTotal: (totalBooster: number) => void
+    subtractTotal: (totalBooster: number) => void
 }
 
-const CartTableElement:React.FC<CartTableElementTypes> = ({ count, setCount, price, namePizza, imgPizza,
-                                                              id, size, deleteOne }) => {
+const CartTableElement:React.FC<CartTableElementTypes> = ({ count, price, namePizza, imgPizza,
+                                                              id, size, deleteOneRow, addTotal, subtractTotal }) => {
+
     return (
         <tr key={id}>
             <td className={style.tableLeveling}>
@@ -27,22 +28,27 @@ const CartTableElement:React.FC<CartTableElementTypes> = ({ count, setCount, pri
                     </span>
             </td>
             <td>
-                {price}
+                {price} грн
             </td>
             <td>
                 <div className={style.tableLeveling}>
-                    <MinusOutlined className={style.controlCount} onClick={() => count === 1
-                        ? setCount(1)
-                        : setCount(count - 1) } />
+                    <MinusOutlined className={style.controlCount} onClick={() => subtractTotal(price)} />
                     { count }
-                    <PlusOutlined className={style.controlCount} onClick={() => setCount(count + 1)} />
+                    <PlusOutlined className={style.controlCount} onClick={() => {
+                        const realPrice = price * count;
+                        addTotal(price)
+                    }} />
                 </div>
             </td>
             <td>
-                {price * count}
+                {price * count} грн
             </td>
             <td>
-                <CloseOutlined onClick={() => deleteOne(id)} className={style.delete} />
+                <CloseOutlined onClick={() => {
+                    const realPrice = price * count;
+                    deleteOneRow(realPrice, id)
+                }}
+                    className={style.delete} />
             </td>
         </tr>
     )

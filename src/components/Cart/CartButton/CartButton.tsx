@@ -8,12 +8,16 @@ import style from './cartButton.module.css'
 type CartButtonTypes = {
     pizzaCartLength: number
     pizzaCartPrice: number
+
+    setTotal: (total: number) => void
 }
 
-const CartButton:React.FC<CartButtonTypes> = ({ pizzaCartLength, pizzaCartPrice }) => {
+const CartButton:React.FC<CartButtonTypes> = ({ pizzaCartLength, pizzaCartPrice, setTotal }) => {
+
     return (
         <div>
-            <Button className={style.btnC} type="ghost" shape="round" icon={<ShoppingCartOutlined />} size={'large'} danger ghost>
+            <Button className={style.btnC} type="ghost" shape="round" icon={<ShoppingCartOutlined />}
+                    size={'large'} danger ghost onClick={() => setTotal(pizzaCartPrice)}>
                 <NavLink className={style.btn} to={'cart'}>
                     Корзина • {pizzaCartPrice} грн • {pizzaCartLength}
                 </NavLink>

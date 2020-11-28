@@ -23,8 +23,9 @@ const CartTable:React.FC<CartTableTypes> = ({ Pizza, deleteOne }) => {
             </tr>
             </thead>
             <tbody>
-            { Pizza.map(p => <CartTableElement_Container id={p.id} imgPizza={p.imgPizza} deleteOne={deleteOne}
-                                                         namePizza={p.namePizza} size={p.size} price={p.price} /> )}
+            {Pizza.map(p => <CartTableElement_Container key={p.id} id={p.id} imgPizza={p.imgPizza} deleteOne={deleteOne}
+                                                        namePizza={p.namePizza} size={p.size} price={p.price}
+            />)}
             </tbody>
         </Table>
     )

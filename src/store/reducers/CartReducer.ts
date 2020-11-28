@@ -10,10 +10,12 @@ export type orderPizza = {
 
 type initialStateType = {
     Pizza: Array<orderPizza>
+    totalPizzaOrder: number
 }
 
 let initialState: initialStateType = {
-    Pizza: []
+    Pizza: [],
+    totalPizzaOrder: 0
 };
 
 const CartReducer = (state = initialState, action: ActionsTypesCart): initialStateType => {
@@ -41,6 +43,13 @@ const CartReducer = (state = initialState, action: ActionsTypesCart): initialSta
             }
         }
 
+        case 'SET_TOTAL': {
+            return {
+                ...state,
+                totalPizzaOrder: action.total
+            }
+        }
+
         default: return state
     }
 };
@@ -64,7 +73,8 @@ export const actionsCart = {
 
     } as const),
     deleteAll: () => ({type: 'DELETE_ALL'} as const),
-    deleteOne: (idDelete: number) => ({type: 'DELETE_ONE', idDelete} as const)
+    deleteOne: (idDelete: number) => ({type: 'DELETE_ONE', idDelete} as const),
+    setTotal: (total: number) => ({type: 'SET_TOTAL', total} as const)
 };
 
 export default CartReducer

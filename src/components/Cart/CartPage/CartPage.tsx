@@ -1,14 +1,16 @@
 import React from 'react'
 import style from './cartPage.module.css'
 import Empty from '../../../assets/img/undraw_empty_cart_co35.svg'
-import { Image, Alert } from 'antd'
+import { Image, Alert, Typography } from 'antd'
 import { Formik, Form, Field } from 'formik'
 import CartTable_Container from './CartTable/CartTable_Container'
+const { Title } = Typography;
 
 type CartPageTypes = {
     empty: number
     showAlert: boolean
     orderAddress: string
+    total: number
 
     setShowAlert: (showAlert: boolean) => void
     setOrderAddress: (orderAddress: string) => void
@@ -25,13 +27,13 @@ type orderFormType = {
 }
 
 const CartPage:React.FC<CartPageTypes> = ({ empty, showAlert, setShowAlert, orderAddress,
-                                              setOrderAddress, deleteAll }) => {
+                                              setOrderAddress, deleteAll, total }) => {
 
     const submit = (values: orderFormType) => {
         setShowAlert(true);
         setOrderAddress(values.orderAddress);
         values.orderAddress = '';
-        setTimeout(deleteAll, 3000)
+        setTimeout(deleteAll, 5000)
     };
 
     return (
@@ -51,11 +53,18 @@ const CartPage:React.FC<CartPageTypes> = ({ empty, showAlert, setShowAlert, orde
                 : <div className={style.empty}>
                     <CartTable_Container />
 
+                    <Title type="success" level={4} underline>Сумма: {total}</Title>
+
                     { showAlert
                         ? <div className={style.form}>
                             <Alert
                                 message="Ваше замовлення прийнято"
-                                description={"Доставимо за адресою " + orderAddress}
+                                description={
+                                    <div>
+                                        <p>Доставимо за адресою {orderAddress}</p>
+                                        <p style={{ fontSize: 16 }}><b>Сумма {total} грн</b></p>
+                                    </div>
+                                }
                                 type="success"
                                 showIcon
                             />
