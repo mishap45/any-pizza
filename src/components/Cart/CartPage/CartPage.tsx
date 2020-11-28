@@ -12,6 +12,7 @@ type CartPageTypes = {
 
     setShowAlert: (showAlert: boolean) => void
     setOrderAddress: (orderAddress: string) => void
+    deleteAll: () => void
 }
 
 const validate = (values: any) => {
@@ -23,12 +24,14 @@ type orderFormType = {
     orderAddress: string
 }
 
-const CartPage:React.FC<CartPageTypes> = ({ empty, showAlert, setShowAlert, orderAddress, setOrderAddress }) => {
+const CartPage:React.FC<CartPageTypes> = ({ empty, showAlert, setShowAlert, orderAddress,
+                                              setOrderAddress, deleteAll }) => {
 
     const submit = (values: orderFormType) => {
         setShowAlert(true);
         setOrderAddress(values.orderAddress);
-        values.orderAddress = ''
+        values.orderAddress = '';
+        setTimeout(deleteAll, 3000)
     };
 
     return (

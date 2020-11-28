@@ -2,13 +2,13 @@ import React from 'react'
 import style from './mainBlock.module.css'
 import Header from '../Header/Header'
 import SideBar from '../SideBar/SideBar'
-import CartButton from '../Cart/CartButton/CartButton'
 import Separator from './Separator/Separator'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import PizzaOnWoodList from '../PizzaList/PizzaOnWoodList/PizzaOnWoodList'
 import BrandPizzaList from '../PizzaList/BrandPizzaList/BrandPizzaList'
 import MiniPizzaList from '../PizzaList/MiniPizzaList/MiniPizzaList'
 import CartPage_Container from '../Cart/CartPage/CartPage_Container'
+import CartButton_Container from '../Cart/CartButton/CartButton_Container'
 
 const ErrorPage = () => {
     return <div>error</div>;
@@ -19,7 +19,7 @@ const MainBlock = () => {
         <div className={style.main}>
             <div className={style.head}>
                 <Header />
-                <CartButton />
+                <CartButton_Container />
             </div>
 
             <Separator />

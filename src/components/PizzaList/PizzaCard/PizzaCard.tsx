@@ -16,14 +16,14 @@ type PizzaCardTypes = {
     price: number
     current: number
 
-    setOrder: (order: boolean) => void
     setCurrent: (current: number) => void
+    Ordered: (currentPrice: number) => void
 }
 
 const PizzaCard: React.FC<PizzaCardTypes> = ({
-                                                 order, setOrder, imgPizza, namePizza,
+                                                 order, imgPizza, namePizza,
                                                  descPizza, smallSize, mediumSize, bigSize, price,
-                                                 current, setCurrent
+                                                 current, setCurrent, Ordered
                                              }) => {
     return (
         <div className={style.pizzaCardBlock}>
@@ -86,7 +86,13 @@ const PizzaCard: React.FC<PizzaCardTypes> = ({
                     <Button type="primary"
                             style={{ backgroundColor: '#4db6ac', borderColor: '#4db6ac' }}
                             block shape={"round"}
-                            onClick={() => setOrder(true)}
+                            onClick={() => {
+                                current === 30
+                                    ? Ordered(price)
+                                    : current === 15
+                                    ? !mediumSize ? Ordered(price) : Ordered(price / 2)
+                                    : current === 50 && Ordered(price * 2)
+                            }}
                     >
                         Замовити
                     </Button>

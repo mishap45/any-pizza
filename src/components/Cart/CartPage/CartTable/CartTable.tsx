@@ -1,16 +1,16 @@
 import React from 'react'
 import Table from 'react-bootstrap/Table'
 import 'bootstrap/dist/css/bootstrap.css'
-import { MinusOutlined, PlusOutlined, CloseOutlined } from '@ant-design/icons'
-import style from './cartTable.module.css'
+import { orderPizza } from '../../../../store/reducers/CartReducer'
+import CartTableElement_Container from "./CartTableElement/CartTableElement_Container";
 
 type CartTableTypes = {
-    count: number
+    Pizza: Array<orderPizza>
 
-    setCount: (cont: number) => void
+    deleteOne: (idDelete: number) => void
 }
 
-const CartTable:React.FC<CartTableTypes> = ({ count, setCount }) => {
+const CartTable:React.FC<CartTableTypes> = ({ Pizza, deleteOne }) => {
     return (
         <Table striped bordered hover>
             <thead>
@@ -23,29 +23,8 @@ const CartTable:React.FC<CartTableTypes> = ({ count, setCount }) => {
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td className={style.tableLeveling}>
-                    <img src="https://tiptop-pizza.com.ua/image/cache/catalog/pizza/havai_new-120x120.jpg" alt="goods"/>
-                    <span>
-                        <p>Гавайська</p>
-                        <p>Діаметр: {'30'}</p>
-                    </span>
-                </td>
-                <td>
-                    {'81 грн'}
-                </td>
-                <td>
-                    <div className={style.tableLeveling}>
-                        <MinusOutlined className={style.controlCount} onClick={() => setCount(count - 1)} />
-                        { count }
-                        <PlusOutlined className={style.controlCount} onClick={() => setCount(count + 1)} />
-                    </div>
-                </td>
-                <td>
-                    {'185 грн'}
-                </td>
-                <td><CloseOutlined className={style.delete} /></td>
-            </tr>
+            { Pizza.map(p => <CartTableElement_Container id={p.id} imgPizza={p.imgPizza} deleteOne={deleteOne}
+                                                         namePizza={p.namePizza} size={p.size} price={p.price} /> )}
             </tbody>
         </Table>
     )
