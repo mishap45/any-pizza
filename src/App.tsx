@@ -1,16 +1,16 @@
 import React from 'react'
 import './App.css'
-import { Button  } from 'antd'
-import 'antd/dist/antd.css'
+import MainBlock from './components/MainBlock/MainBlock'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Button type="primary">Primary Button</Button>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <MainBlock/>
+            </BrowserRouter>
+        </div>
+    );
 }
 
 export default App;

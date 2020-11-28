@@ -1,0 +1,31 @@
+.sideBarBlock {
+    background-color: #4db6ac;
+    width: 25%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 50vh;
+}
+
+.pizzaChoose {
+    display: flex;
+    align-items: center;
+    color: #222;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.pizzaChoose:hover {
+    text-decoration: none;
+    background-color: #eee;
+    color: #004d40;
+}
+
+.pizzaSelect {
+    text-decoration: none;
+    background-color: #eee;
+    color: #004d40;
+}

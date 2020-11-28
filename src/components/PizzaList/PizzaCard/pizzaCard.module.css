@@ -1,0 +1,56 @@
+.pizzaCardBlock {
+    width: 225px;
+    margin-bottom: 15px;
+}
+
+.pizzaName {
+    font-weight: 600;
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.pizzaDesc {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.sizes {
+    display: flex;
+    padding-left: 10px;
+}
+
+.sizes > Button:first-child {
+    margin-left: 0;
+}
+
+.sizes > Button:last-child {
+    margin-left: 5px;
+    margin-right: 0;
+}
+
+.sizes > Button {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.pizzaSizePriceBlock {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pizzaPrice {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    padding-right: 5px;
+}
+
+.ordered {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ff3d00;
+    text-align: center;
+    line-height: 100px;
+}

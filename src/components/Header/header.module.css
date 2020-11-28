@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+
+.logoText {
+    font-size: 40px;
+    font-family: 'Nerko One', cursive;
+    margin: 0;
+    padding-left: 10px;
+}
+
+.headerBlock {
+    display: flex;
+    align-items: center;
+}

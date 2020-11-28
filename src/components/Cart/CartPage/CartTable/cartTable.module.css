@@ -1,0 +1,21 @@
+.tableLeveling {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.controlCount {
+    color: #4db6ac;
+}
+
+.controlCount:hover {
+    color: #3700B3;
+}
+
+.delete {
+    color: #ff4d4f;
+}
+
+.delete:hover {
+    color: #B00020;
+}

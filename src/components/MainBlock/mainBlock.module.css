@@ -1,0 +1,23 @@
+.main {
+    background-color: #eee;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.separator {
+    height: 1px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: #26a69a;
+}
