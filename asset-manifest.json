@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/any-pizza/static/css/main.08540e68.chunk.css",
+    "main.js": "/any-pizza/static/js/main.ec31d99b.chunk.js",
+    "main.js.map": "/any-pizza/static/js/main.ec31d99b.chunk.js.map",
+    "runtime-main.js": "/any-pizza/static/js/runtime-main.ab1e0dab.js",
+    "runtime-main.js.map": "/any-pizza/static/js/runtime-main.ab1e0dab.js.map",
+    "static/css/2.aa1dd5d8.chunk.css": "/any-pizza/static/css/2.aa1dd5d8.chunk.css",
+    "static/js/2.a2e558c8.chunk.js": "/any-pizza/static/js/2.a2e558c8.chunk.js",
+    "static/js/2.a2e558c8.chunk.js.map": "/any-pizza/static/js/2.a2e558c8.chunk.js.map",
+    "static/js/3.f8b7d12a.chunk.js": "/any-pizza/static/js/3.f8b7d12a.chunk.js",
+    "static/js/3.f8b7d12a.chunk.js.map": "/any-pizza/static/js/3.f8b7d12a.chunk.js.map",
+    "index.html": "/any-pizza/index.html",
+    "static/css/2.aa1dd5d8.chunk.css.map": "/any-pizza/static/css/2.aa1dd5d8.chunk.css.map",
+    "static/css/main.08540e68.chunk.css.map": "/any-pizza/static/css/main.08540e68.chunk.css.map",
+    "static/js/2.a2e558c8.chunk.js.LICENSE.txt": "/any-pizza/static/js/2.a2e558c8.chunk.js.LICENSE.txt",
+    "static/media/fireplace.f2ae30b6.svg": "/any-pizza/static/media/fireplace.f2ae30b6.svg",
+    "static/media/logo.bb4e41b6.svg": "/any-pizza/static/media/logo.bb4e41b6.svg",
+    "static/media/pizza-slice.79af6c0b.svg": "/any-pizza/static/media/pizza-slice.79af6c0b.svg",
+    "static/media/pizza_mini.9127e627.svg": "/any-pizza/static/media/pizza_mini.9127e627.svg",
+    "static/media/undraw_empty_cart_co35.395cce9e.svg": "/any-pizza/static/media/undraw_empty_cart_co35.395cce9e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ab1e0dab.js",
+    "static/css/2.aa1dd5d8.chunk.css",
+    "static/js/2.a2e558c8.chunk.js",
+    "static/css/main.08540e68.chunk.css",
+    "static/js/main.ec31d99b.chunk.js"
+  ]
+}
