@@ -20,11 +20,9 @@ type PizzaCardTypes = {
     Ordered: (currentPrice: number) => void
 }
 
-const PizzaCard: React.FC<PizzaCardTypes> = ({
-                                                 order, imgPizza, namePizza,
-                                                 descPizza, smallSize, mediumSize, bigSize, price,
-                                                 current, setCurrent, Ordered
-                                             }) => {
+const PizzaCard: React.FC<PizzaCardTypes> = ({ order, imgPizza, namePizza,
+                                               descPizza, smallSize, mediumSize, bigSize, price,
+                                               current, setCurrent, Ordered }) => {
     return (
         <div className={style.pizzaCardBlock}>
             <Image

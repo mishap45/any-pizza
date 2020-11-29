@@ -4,6 +4,15 @@
     justify-content: space-around;
 }
 
+.tableLevelingLine {
+    line-height: 90px;
+}
+
+.tableLevelingAction {
+    text-align: center;
+    line-height: 90px;
+}
+
 .controlCount {
     color: #4db6ac;
 }
@@ -18,4 +27,8 @@
 
 .delete:hover {
     color: #B00020;
+}
+
+.nameWidth {
+    width: 100px;
 }

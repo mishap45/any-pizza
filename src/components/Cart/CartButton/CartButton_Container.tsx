@@ -45,5 +45,5 @@ const mapStateToProps = (state: AppStateType) => ({
 });
 
 export default compose(
-    connect<statePropsType, dispatchPropsType, ownPropsType, AppStateType>(mapStateToProps, {setTotal})
+    connect<statePropsType, dispatchPropsType, ownPropsType, AppStateType>(mapStateToProps, { setTotal })
 )(CartButton_Container)

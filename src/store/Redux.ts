@@ -1,4 +1,4 @@
-import {combineReducers, createStore} from 'redux'
+import { combineReducers, createStore } from 'redux'
 import CartReducer from './reducers/CartReducer'
 
 let reducersBox = combineReducers({

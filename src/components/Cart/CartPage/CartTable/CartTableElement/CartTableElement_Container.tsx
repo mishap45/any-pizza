@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import CartTableElement from './CartTableElement'
 import { actionsCart } from '../../../../../store/reducers/CartReducer'
-import {AppStateType} from "../../../../../store/Redux";
-import { getTotalPizzaOrder } from "../../../../../store/selectors/CartSelector";
-import {compose} from "redux";
-import {connect} from "react-redux";
+import { AppStateType } from '../../../../../store/Redux'
+import { getTotalPizzaOrder } from '../../../../../store/selectors/CartSelector'
+import { compose } from 'redux'
+import { connect } from 'react-redux'
 
 type statePropsType = {
     totalPizzaOrder: number
@@ -63,5 +63,5 @@ const mapStateToProps = (state: AppStateType) => ({
 });
 
 export default compose(
-    connect<statePropsType, dispatchPropsType, ownPropsType, AppStateType>(mapStateToProps, {setTotal})
+    connect<statePropsType, dispatchPropsType, ownPropsType, AppStateType>(mapStateToProps, { setTotal })
 )(CartTableElement_Container)

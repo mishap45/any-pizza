@@ -24,8 +24,8 @@ type ownPropsType = pizza
 
 type PizzaCard_ContainerTypes = statePropsType & dispatchPropsType & ownPropsType
 
-const PizzaCard_Container: React.FC<PizzaCard_ContainerTypes> = ({id, imgPizza, namePizza, descPizza, smallSize,
-                                                                mediumSize, bigSize, price, setCart}) => {
+const PizzaCard_Container: React.FC<PizzaCard_ContainerTypes> = ({ id, imgPizza, namePizza, descPizza, smallSize,
+                                                                mediumSize, bigSize, price, setCart }) => {
 
     const [order, setOrder] = useState<boolean>(false);
     const [current, setCurrent] = useState<number>(30);

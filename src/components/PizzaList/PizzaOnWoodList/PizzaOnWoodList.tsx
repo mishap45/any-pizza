@@ -9,8 +9,7 @@ const PizzaOnWoodList = () => {
             {pizzaOnWood.Pizza.map(p => <PizzaCard_Container key={p.id} id={p.id} imgPizza={p.imgPizza}
                                                              namePizza={p.namePizza} descPizza={p.descPizza}
                                                              smallSize={p.smallSize} mediumSize={p.mediumSize}
-                                                             bigSize={p.bigSize} price={p.price}
-            />)}
+                                                             bigSize={p.bigSize} price={p.price} />)}
         </div>
     )
 };

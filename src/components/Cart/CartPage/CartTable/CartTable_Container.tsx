@@ -30,5 +30,5 @@ const mapStateToProps = (state: AppStateType) => ({
 });
 
 export default compose(
-    connect<statePropsType, dispatchPropsType, ownPropsType, AppStateType>(mapStateToProps, {deleteOne})
+    connect<statePropsType, dispatchPropsType, ownPropsType, AppStateType>(mapStateToProps, { deleteOne })
 )(CartTable_Container)

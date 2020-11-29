@@ -19,31 +19,32 @@ const CartTableElement:React.FC<CartTableElementTypes> = ({ count, price, namePi
                                                               id, size, deleteOneRow, addTotal, subtractTotal }) => {
 
     return (
-        <tr key={id}>
+        <tr>
             <td className={style.tableLeveling}>
                 <img src={imgPizza} alt="goods" width={100} />
                 <span>
-                        <p>{namePizza}</p>
+                        <p className={style.nameWidth}>{namePizza}</p>
                         <p>Діаметр: {size}</p>
                     </span>
             </td>
-            <td>
+
+            <td className={style.tableLevelingLine}>
                 {price} грн
             </td>
-            <td>
+
+            <td className={style.tableLevelingLine}>
                 <div className={style.tableLeveling}>
                     <MinusOutlined className={style.controlCount} onClick={() => subtractTotal(price)} />
                     { count }
-                    <PlusOutlined className={style.controlCount} onClick={() => {
-                        const realPrice = price * count;
-                        addTotal(price)
-                    }} />
+                    <PlusOutlined className={style.controlCount} onClick={() => addTotal(price)} />
                 </div>
             </td>
-            <td>
+
+            <td className={style.tableLevelingLine}>
                 {price * count} грн
             </td>
-            <td>
+
+            <td className={style.tableLevelingAction}>
                 <CloseOutlined onClick={() => {
                     const realPrice = price * count;
                     deleteOneRow(realPrice, id)

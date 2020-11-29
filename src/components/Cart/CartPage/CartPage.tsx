@@ -4,6 +4,8 @@ import Empty from '../../../assets/img/undraw_empty_cart_co35.svg'
 import { Image, Alert, Typography } from 'antd'
 import { Formik, Form, Field } from 'formik'
 import CartTable_Container from './CartTable/CartTable_Container'
+import * as Yup from 'yup'
+
 const { Title } = Typography;
 
 type CartPageTypes = {
@@ -17,17 +19,19 @@ type CartPageTypes = {
     deleteAll: () => void
 }
 
-const validate = (values: any) => {
-    const errors = {};
-    return errors;
-};
-
 type orderFormType = {
     orderAddress: string
 }
 
-const CartPage:React.FC<CartPageTypes> = ({ empty, showAlert, setShowAlert, orderAddress,
-                                              setOrderAddress, deleteAll, total }) => {
+
+const validateSchema = Yup.object().shape({
+    orderAddress: Yup.string()
+        .max(50, 'TooLong Address!')
+        .required('Required')
+});
+
+const CartPage: React.FC<CartPageTypes> = ({ empty, showAlert, setShowAlert, orderAddress,
+                                               setOrderAddress, deleteAll, total }) => {
 
     const submit = (values: orderFormType) => {
         setShowAlert(true);
@@ -38,7 +42,7 @@ const CartPage:React.FC<CartPageTypes> = ({ empty, showAlert, setShowAlert, orde
 
     return (
         <>
-            { empty === 0
+            {empty === 0
                 ? <div className={style.empty}>
                     <Image
                         width={225}
@@ -51,18 +55,18 @@ const CartPage:React.FC<CartPageTypes> = ({ empty, showAlert, setShowAlert, orde
                 </div>
 
                 : <div className={style.empty}>
-                    <CartTable_Container />
+                    <CartTable_Container/>
 
                     <Title type="success" level={4} underline>Сумма: {total}</Title>
 
-                    { showAlert
+                    {showAlert
                         ? <div className={style.form}>
                             <Alert
                                 message="Ваше замовлення прийнято"
                                 description={
                                     <div>
-                                        <p>Доставимо за адресою {orderAddress}</p>
-                                        <p style={{ fontSize: 16 }}><b>Сумма {total} грн</b></p>
+                                        <p>Доставимо за адресою: {orderAddress}</p>
+                                        <p style={{fontSize: 16}}><b>Сумма: {total} грн</b></p>
                                     </div>
                                 }
                                 type="success"
@@ -70,18 +74,23 @@ const CartPage:React.FC<CartPageTypes> = ({ empty, showAlert, setShowAlert, orde
                             />
                         </div>
                         : <Formik
-                            initialValues={{ orderAddress: '' }}
-                            validate={validate}
+                            initialValues={{orderAddress: ''}}
+                            validationSchema={validateSchema}
                             onSubmit={submit}
                         >
-                            {() => (
+                            {({errors, touched}) => (
                                 <Form className={style.form}>
                                     <Field className={style.input} type="text"
                                            name="orderAddress"
-                                           placeholder={'Введіть адресу (Чортків, Залізнична 30)'} />
+                                           placeholder={'Введіть адресу доставки (Чортків, Залізнична 30)'}/>
                                     <button type="submit">
                                         Замовити
                                     </button>
+                                    { errors.orderAddress && touched.orderAddress ? (
+                                        <div style={{ color: '#ff4d4f', fontWeight: 'bold', fontSize: 16 }}>
+                                            { errors.orderAddress }
+                                        </div>
+                                    ) : null }
                                 </Form>
                             )}
                         </Formik>

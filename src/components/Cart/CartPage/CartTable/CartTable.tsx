@@ -2,7 +2,7 @@ import React from 'react'
 import Table from 'react-bootstrap/Table'
 import 'bootstrap/dist/css/bootstrap.css'
 import { orderPizza } from '../../../../store/reducers/CartReducer'
-import CartTableElement_Container from "./CartTableElement/CartTableElement_Container";
+import CartTableElement_Container from './CartTableElement/CartTableElement_Container'
 
 type CartTableTypes = {
     Pizza: Array<orderPizza>
