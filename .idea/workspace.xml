@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7ab2dfb-bde8-43da-8f74-b70462b922ef" name="Default Changelist" comment="" />
+    <list default="true" id="d7ab2dfb-bde8-43da-8f74-b70462b922ef" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -103,6 +105,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/API" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -179,7 +182,7 @@
       <workItem from="1606482763794" duration="9034000" />
       <workItem from="1606544328672" duration="680000" />
       <workItem from="1606545042310" duration="30482000" />
-      <workItem from="1606632455077" duration="4005000" />
+      <workItem from="1606632455077" duration="4277000" />
     </task>
     <task id="LOCAL-00001" summary="MiLov">
       <created>1606468260283</created>
@@ -227,7 +230,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52906000" />
+    <option name="totallyTimeSpent" value="53178000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
