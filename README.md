@@ -12,6 +12,7 @@ Project is created with:
 * react-redux: 7.2.2
 * react-router-dom: 5.2.0
 * react-scripts: 4.0.1
+* redux: 4.0.5
 * typescript: 4.1.2
 * web-vitals: 0.2.4
 * yup: 0.31.0
